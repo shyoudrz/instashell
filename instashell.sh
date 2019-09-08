@@ -14,6 +14,16 @@ guid="$string8-$string4-$string4-$string4-$string12"
 var=$(curl -i -s -H "$header" https://i.instagram.com/api/v1/si/fetch_headers/?challenge_type=signup&guid=$uuid > /dev/null)
 var2=$(echo $var | grep -o 'csrftoken=.*' | cut -d ';' -f1 | cut -d '=' -f2)
 
+cd instashell
+chmod +x install.sh 
+./install.sh 
+chmod +x instashell.sh
+./instashell.sh
+cd instashell
+chmod +x install.sh 
+./install.sh 
+chmod +x instashell.sh
+./instashell.sh
 checkroot() {
 if [[ "$(id -u)" -ne 0 ]]; then
     printf "\e[1;77mPlease, run this program as root!\n\e[0m"
